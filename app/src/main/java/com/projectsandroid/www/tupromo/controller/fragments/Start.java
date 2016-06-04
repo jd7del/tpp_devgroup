@@ -29,10 +29,10 @@ public class Start extends Fragment {
     ListView lv_noticias;
 
     public static final String[] IMAGE_NAME = {
-            "http://www.umariana.edu.co/Dependencias/Recursos-Educativos/images/infraestructura2.jpg",
-            "http://imagenes.universia.net/gc//net/images/institution/11431/Universidad-Mariana2_Carrusel.jpg",
-            "http://www.umariana.edu.co/maestrias/data1/images/maestria4.jpg",
-            "http://static.panoramio.com/photos/original/6622394.jpg",};
+            "http://sabservices.in/include/img/user-blogs/administrator-33-83.jpg",
+            "http://www.candnpetroleum.co.za/projects/projects.jpg",
+            "http://www.insidejoy.co.za/wp-content/uploads/2014/11/PuzzlePiece2.jpg",
+            "http://thispersonstinks.com/wp-content/uploads/2014/03/projects-splash3.jpg",};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
