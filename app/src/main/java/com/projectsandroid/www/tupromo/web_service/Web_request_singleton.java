@@ -10,15 +10,15 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
 
-public final class MySocialMediaSingleton {
+public final class Web_request_singleton {
     // Atributos
-    private static MySocialMediaSingleton singleton;
+    private static Web_request_singleton singleton;
     private ImageLoader imageLoader;
     private RequestQueue requestQueue;
     private static Context context;
 
-    private MySocialMediaSingleton(Context context) {
-        MySocialMediaSingleton.context = context;
+    private Web_request_singleton(Context context) {
+        Web_request_singleton.context = context;
         requestQueue = getRequestQueue();
 
         imageLoader = new ImageLoader(requestQueue,
@@ -38,9 +38,9 @@ public final class MySocialMediaSingleton {
                 });
     }
 
-    public static synchronized MySocialMediaSingleton getInstance(Context context) {
+    public static synchronized Web_request_singleton getInstance(Context context) {
         if (singleton == null) {
-            singleton = new MySocialMediaSingleton(context);
+            singleton = new Web_request_singleton(context);
         }
         return singleton;
     }

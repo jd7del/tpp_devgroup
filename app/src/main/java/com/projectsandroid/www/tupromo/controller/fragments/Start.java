@@ -15,9 +15,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.merhold.extensiblepageindicator.ExtensiblePageIndicator;
 import com.projectsandroid.www.tupromo.R;
-import com.projectsandroid.www.tupromo.web_service.MySocialMediaSingleton;
-
-import java.util.ArrayList;
+import com.projectsandroid.www.tupromo.web_service.Web_request_singleton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -96,7 +94,7 @@ public class Start extends Fragment {
             String imageFileName = IMAGE_NAME[position];
 
             // Petición el image loader
-            ImageLoader imageLoader = MySocialMediaSingleton.getInstance(getContext()).getImageLoader();
+            ImageLoader imageLoader = Web_request_singleton.getInstance(getContext()).getImageLoader();
 
             //int imgResId = getResources().getIdentifier(imageFileName, "drawable", getActivity().getPackageName());
             imagen.setImageUrl(imageFileName,imageLoader);
