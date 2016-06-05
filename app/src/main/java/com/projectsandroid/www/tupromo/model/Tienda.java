@@ -10,7 +10,7 @@ public class Tienda {
 
     private String nombre;
     private String direccion;
-    private int plan_tipo;
+    private Plan_tipo plan_tipo;
     private double telefono1;
     private double telefono2;
     private Date fecha_matricula;
@@ -35,11 +35,11 @@ public class Tienda {
     }
 
     public int getPlan_tipo() {
-        return plan_tipo;
+        return plan_tipo.getValor();
     }
 
-    public void setPlan_tipo(int plan_tipo) {
-        this.plan_tipo = plan_tipo;
+    public void setPlan_tipo(Plan_tipo plan_tipo) {
+       this.plan_tipo = plan_tipo;
     }
 
     public double getTelefono1() {
