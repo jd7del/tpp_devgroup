@@ -7,22 +7,21 @@ import java.util.Date;
  */
 public class Promocion {
 
-
     private String titulo;
     private String detalle;
     private String imagen;
     private Date fecha_inicia;
     private Date fecha_finaliza;
-    private boolean activa;
+    private boolean estado;
     private int tipo;
 
-    public Promocion(String titulo, String detalle, String imagen, Date fecha_inicia, Date fecha_finaliza, boolean activa, int tipo) {
+    public Promocion(String titulo, String detalle, String imagen, Date fecha_inicia, Date fecha_finaliza, boolean estado, int tipo) {
         this.titulo = titulo;
         this.detalle = detalle;
         this.imagen = imagen;
         this.fecha_inicia = fecha_inicia;
         this.fecha_finaliza = fecha_finaliza;
-        this.activa = activa;
+        this.estado = estado;
         this.tipo = tipo;
     }
 
@@ -69,12 +68,12 @@ public class Promocion {
         this.fecha_finaliza = fecha_finaliza;
     }
 
-    public boolean isActiva() {
-        return activa;
+    public boolean isEstado() {
+        return estado;
     }
 
-    public void setActiva(boolean activa) {
-        this.activa = activa;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     public int getTipo() {

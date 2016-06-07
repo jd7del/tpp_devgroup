@@ -1,5 +1,8 @@
 package com.projectsandroid.www.tupromo.model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * Created by Jason Delgado M on 04/06/2016.
  */
@@ -10,15 +13,20 @@ public class Usuario {
     private String e_mail;
     private String nick_user;
     private String password;
-    private String[] intereses;
+    private Date fecha_inscripcion;
+    private int saldo_debe;
+    private Plan plan;
+    private ArrayList<Interes> intereses;
+    private ArrayList<Tienda> favoritos;
 
-    public Usuario(String nombres, String apellidos, String e_mail, String nick_user, String password, String[] intereses) {
+    public Usuario(String nombres, String apellidos, String e_mail, String nick_user, String password) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.e_mail = e_mail;
         this.nick_user = nick_user;
         this.password = password;
-        this.intereses = intereses;
+        this.fecha_inscripcion = new Date();
+        this.saldo_debe = 0;
     }
 
     public Usuario() {
@@ -64,11 +72,51 @@ public class Usuario {
         this.password = password;
     }
 
-    public String[] getIntereses() {
+    public ArrayList<Interes> getIntereses() {
         return intereses;
     }
 
-    public void setIntereses(String[] intereses) {
+    public void setIntereses(ArrayList<Interes> intereses) {
         this.intereses = intereses;
+    }
+
+    public ArrayList<Tienda> getFavoritos() {
+        return favoritos;
+    }
+
+    public void setFavoritos(ArrayList<Tienda> favoritos) {
+        this.favoritos = favoritos;
+    }
+
+    public void agregar_favorito(Tienda tienda) {
+        favoritos.add(tienda);
+    }
+
+    public void quitar_favorito(Tienda tienda) {
+        favoritos.remove(tienda);
+    }
+
+    public Date getFecha_inscripcion() {
+        return fecha_inscripcion;
+    }
+
+    public void setFecha_inscripcion(Date fecha_inscripcion) {
+        this.fecha_inscripcion = fecha_inscripcion;
+    }
+
+    public int getSaldo_debe() {
+        return saldo_debe;
+    }
+
+    public void setSaldo_debe(int saldo_debe) {
+        this.saldo_debe = saldo_debe;
+    }
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public void setPlan(Plan plan) {
+        this.plan = plan;
     }
 }
