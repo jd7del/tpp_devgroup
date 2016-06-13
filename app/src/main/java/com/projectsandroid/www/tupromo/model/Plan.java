@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Plan {
 
+    private int id;
     private String nombre;
     private String descripcion;
     private int valor;
@@ -69,5 +70,13 @@ public class Plan {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

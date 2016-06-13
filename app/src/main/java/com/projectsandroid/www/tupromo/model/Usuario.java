@@ -8,45 +8,24 @@ import java.util.Date;
  */
 public class Usuario {
 
-
-    private String nombres;
-    private String apellidos;
+    private int id;
     private String e_mail;
     private String nick_user;
     private String password;
+    private String salt;
     private Date fecha_inscripcion;
-    private int saldo_debe;
-    private String plan;
-    private ArrayList<String> intereses;
-    private ArrayList<String> favoritos;
+
+    private ArrayList<Tienda> favoritos;
+    private ArrayList<Interes> intereses;
 
     public Usuario(String nombres, String apellidos, String e_mail, String nick_user, String password) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
         this.e_mail = e_mail;
         this.nick_user = nick_user;
         this.password = password;
         this.fecha_inscripcion = new Date();
-        this.saldo_debe = 0;
     }
 
     public Usuario() {
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
     }
 
     public String getE_mail() {
@@ -73,30 +52,6 @@ public class Usuario {
         this.password = password;
     }
 
-    public ArrayList<String> getIntereses() {
-        return intereses;
-    }
-
-    public void setIntereses(ArrayList<String> intereses) {
-        this.intereses = intereses;
-    }
-
-    public ArrayList<String> getFavoritos() {
-        return favoritos;
-    }
-
-    public void setFavoritos(ArrayList<String> favoritos) {
-        this.favoritos = favoritos;
-    }
-
-    public void agregar_favorito(String tienda) {
-        favoritos.add(tienda);
-    }
-
-    public void quitar_favorito(Tienda tienda) {
-        favoritos.remove(tienda);
-    }
-
     public Date getFecha_inscripcion() {
         return fecha_inscripcion;
     }
@@ -105,19 +60,51 @@ public class Usuario {
         this.fecha_inscripcion = fecha_inscripcion;
     }
 
-    public int getSaldo_debe() {
-        return saldo_debe;
+    public ArrayList<Tienda> getFavoritos() {
+        return favoritos;
     }
 
-    public void setSaldo_debe(int saldo_debe) {
-        this.saldo_debe = saldo_debe;
+    public void setFavoritos(ArrayList<Tienda> favoritos) {
+        this.favoritos = favoritos;
     }
 
-    public String getPlan() {
-        return plan;
+    public void agregar_favorito(Tienda tienda){
+        favoritos.add(tienda);
     }
 
-    public void setPlan(String plan) {
-        this.plan = plan;
+    public void quitar_favorito(Tienda tienda){
+        favoritos.remove(tienda);
+    }
+
+    public ArrayList<Interes> getIntereses() {
+        return intereses;
+    }
+
+    public void setIntereses(ArrayList<Interes> intereses) {
+        this.intereses = intereses;
+    }
+
+    public void agrega_interes(Interes interes){
+        intereses.add(interes);
+    }
+
+    public void quitar_interes(Interes interes){
+        intereses.remove(interes);
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
