@@ -1,11 +1,12 @@
 package com.projectsandroid.www.tupromo.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Jason Delgado M on 13/06/2016.
  */
-public class Centro_comercial {
+public class Centro_comercial implements Serializable {
 
     private int id;
     private String nombre;

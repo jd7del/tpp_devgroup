@@ -1,11 +1,12 @@
 package com.projectsandroid.www.tupromo.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Jason Delgado M on 07/06/2016.
  */
-public class Plan {
+public class Plan implements Serializable {
 
     private int id;
     private String nombre;
@@ -22,6 +23,9 @@ public class Plan {
         this.numero_publicaciones = numero_publicaciones;
         this.estado=true;
         this.fecha_creado = new Date();
+    }
+
+    public Plan() {
     }
 
     public String getNombre() {

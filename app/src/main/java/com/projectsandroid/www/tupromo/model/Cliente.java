@@ -1,11 +1,12 @@
 package com.projectsandroid.www.tupromo.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Jason Delgado M on 13/06/2016.
  */
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements Serializable {
 
     private String nombres;
     private String apellidos;

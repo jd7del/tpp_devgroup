@@ -1,9 +1,11 @@
 package com.projectsandroid.www.tupromo.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Jason Delgado M on 13/06/2016.
  */
-public class Sub_categoria {
+public class Sub_categoria implements Serializable {
 
     private int id;
     private String nombre;
@@ -34,11 +36,12 @@ public class Sub_categoria {
         this.nombre = nombre;
     }
 
-    public Categoria get_categoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void set_categoria(Categoria categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
 }

@@ -1,12 +1,13 @@
 package com.projectsandroid.www.tupromo.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 /**
  * Created by Jason Delgado M on 04/06/2016.
  */
-public class Usuario {
+public class Usuario implements Serializable {
 
     private int id;
     private String e_mail;

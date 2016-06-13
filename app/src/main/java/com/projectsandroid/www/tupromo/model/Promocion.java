@@ -1,11 +1,12 @@
 package com.projectsandroid.www.tupromo.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Jason Delgado M on 04/06/2016.
  */
-public class Promocion {
+public class Promocion implements Serializable{
 
     private int id;
     private String titulo;

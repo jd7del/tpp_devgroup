@@ -6,21 +6,31 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.merhold.extensiblepageindicator.ExtensiblePageIndicator;
 import com.projectsandroid.www.tupromo.R;
+import com.projectsandroid.www.tupromo.model.Promocion;
+import com.projectsandroid.www.tupromo.web_service.GsonRequest;
+import com.projectsandroid.www.tupromo.web_service.Util_promociones;
 import com.projectsandroid.www.tupromo.web_service.Web_request_singleton;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Start extends Fragment {
+
+    String URL_BASE = "http://jasondelgado.net/API/promociones/lista";
     static final int NUM_ITEMS = 4;
     ImageFragmentPagerAdapter imageFragmentPagerAdapter;
     ViewPager viewPager;
@@ -56,7 +66,38 @@ public class Start extends Fragment {
 //
 //        lv_noticias = (ListView) rootView.findViewById(R.id.lv_noticias);
 //        lv_noticias.setAdapter(new Noticia_adapter(this.getContext(), not));
+        cargar_promociones();
         return rootView;
+    }
+
+    /*
+     * metodo que carga las promociones desde el webService
+     */
+    private void cargar_promociones() {
+        // Añadir petición GSON a la cola
+        Web_request_singleton.getInstance(getContext()).addToRequestQueue(
+                new GsonRequest<>(
+                        URL_BASE,
+                        Util_promociones.class,
+                        null,
+                        new Response.Listener<Util_promociones>() {
+                            @Override
+                            public void onResponse(Util_promociones response) {
+                                //aqui implementar logica para peticion de respuesta
+                                for(Promocion p: response.getPromociones()) {
+                                    //muestra en el logcat, el id de la tienda, comprobando la respuesta
+                                    Log.d("promt", "id tienda: " + p.getTienda().getId());
+                                }
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.d("app", "Error Volley: " + error.getMessage());
+                            }
+                        }
+                )
+        );
     }
 
     public static Start newInstance() {
@@ -98,6 +139,7 @@ public class Start extends Fragment {
 
             //int imgResId = getResources().getIdentifier(imageFileName, "drawable", getActivity().getPackageName());
             imagen.setImageUrl(imageFileName,imageLoader);
+
             return swipeView;
         }
 

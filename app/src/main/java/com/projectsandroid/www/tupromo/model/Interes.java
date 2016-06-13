@@ -1,9 +1,11 @@
 package com.projectsandroid.www.tupromo.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Jason Delgado M on 07/06/2016.
  */
-public class Interes {
+public class Interes implements Serializable {
 
     private int id;
     private String nombre;
