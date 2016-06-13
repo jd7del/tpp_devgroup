@@ -16,9 +16,9 @@ public class Usuario {
     private String password;
     private Date fecha_inscripcion;
     private int saldo_debe;
-    private Plan plan;
-    private ArrayList<Interes> intereses;
-    private ArrayList<Tienda> favoritos;
+    private String plan;
+    private ArrayList<String> intereses;
+    private ArrayList<String> favoritos;
 
     public Usuario(String nombres, String apellidos, String e_mail, String nick_user, String password) {
         this.nombres = nombres;
@@ -73,23 +73,23 @@ public class Usuario {
         this.password = password;
     }
 
-    public ArrayList<Interes> getIntereses() {
+    public ArrayList<String> getIntereses() {
         return intereses;
     }
 
-    public void setIntereses(ArrayList<Interes> intereses) {
+    public void setIntereses(ArrayList<String> intereses) {
         this.intereses = intereses;
     }
 
-    public ArrayList<Tienda> getFavoritos() {
+    public ArrayList<String> getFavoritos() {
         return favoritos;
     }
 
-    public void setFavoritos(ArrayList<Tienda> favoritos) {
+    public void setFavoritos(ArrayList<String> favoritos) {
         this.favoritos = favoritos;
     }
 
-    public void agregar_favorito(Tienda tienda) {
+    public void agregar_favorito(String tienda) {
         favoritos.add(tienda);
     }
 
@@ -113,11 +113,11 @@ public class Usuario {
         this.saldo_debe = saldo_debe;
     }
 
-    public Plan getPlan() {
+    public String getPlan() {
         return plan;
     }
 
-    public void setPlan(Plan plan) {
+    public void setPlan(String plan) {
         this.plan = plan;
     }
 }

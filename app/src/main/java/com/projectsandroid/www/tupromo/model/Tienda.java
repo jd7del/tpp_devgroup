@@ -15,7 +15,7 @@ public class Tienda {
     private String imagen;
     private String descripcion;
     private Date fecha_matricula;
-    private ArrayList<Promocion> promociones;
+    private ArrayList<String> promociones;
 
     public Tienda() {
     }
@@ -69,15 +69,15 @@ public class Tienda {
         this.fecha_matricula = fecha_matricula;
     }
 
-    public ArrayList<Promocion> getPromociones() {
+    public ArrayList<String> getPromociones() {
         return promociones;
     }
 
-    public void setPromociones(ArrayList<Promocion> promociones) {
+    public void setPromociones(ArrayList<String> promociones) {
         this.promociones = promociones;
     }
 
-    public void agregarPromocion(Promocion promocion){
+    public void agregarPromocion(String promocion){
         promociones.add(promocion);
     }
 
