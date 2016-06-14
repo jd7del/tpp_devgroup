@@ -35,6 +35,8 @@ public class Start extends Fragment {
     ImageFragmentPagerAdapter imageFragmentPagerAdapter;
     ViewPager viewPager;
     ListView lv_noticias;
+    ListView lv_noticias2;
+    //prueba 1
 
     public static final String[] IMAGE_NAME = {
             "http://sabservices.in/include/img/user-blogs/administrator-33-83.jpg",
