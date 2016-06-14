@@ -54,7 +54,6 @@ public class Start extends Fragment {
         ExtensiblePageIndicator extensiblePageIndicator = (ExtensiblePageIndicator) rootView.findViewById(R.id.flexibleIndicator);
         extensiblePageIndicator.initViewPager(viewPager);
 
-
 //        ArrayList<Noticia> not = new ArrayList<>();
 //
 //        not.add(new Noticia("noticia 1", "detalle 1", "https://yt3.ggpht.com/-2pQcWEv_57U/AAAAAAAAAAI/AAAAAAAAAAA/_hhB2K2cRBk/s100-c-k-no-rj-c0xffffff/photo.jpg"));
@@ -84,7 +83,7 @@ public class Start extends Fragment {
                             @Override
                             public void onResponse(Util_promociones response) {
                                 //aqui implementar logica para peticion de respuesta
-                                for(Promocion p: response.getPromociones()) {
+                                for (Promocion p : response.getPromociones()) {
                                     //muestra en el logcat, el id de la tienda, comprobando la respuesta
                                     Log.d("promt", "id tienda: " + p.getTienda().getId());
                                 }
@@ -138,7 +137,7 @@ public class Start extends Fragment {
             ImageLoader imageLoader = Web_request_singleton.getInstance(getContext()).getImageLoader();
 
             //int imgResId = getResources().getIdentifier(imageFileName, "drawable", getActivity().getPackageName());
-            imagen.setImageUrl(imageFileName,imageLoader);
+            imagen.setImageUrl(imageFileName, imageLoader);
 
             return swipeView;
         }
